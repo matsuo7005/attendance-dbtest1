@@ -29,17 +29,15 @@ router.get('/list', function(req, res, next) {
   console.log(userlist.every(username => username instanceof Users));
   console.log("All users:", JSON.stringify(userlist, null, 2));
   */
-  /** ここも動きません
-  const list = Users.findkAll({
-    where: {username: 'matsuoka'}
-  })
+  const list = Users.findAll()
   .then(() => {
-    res.send(`result = ${JSON.stringify(list)}`)
+    const listvalue = JSON.stringify(list, null, 2);
+    //console.log(list.every(username => username instanceof Users));
+    res.send(`result = ${listvalue}`)
   })
   .catch(() => {
     (res.send('error'))
   });
-  */
 });
 
 
