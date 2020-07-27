@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  form(action="/users" method="post")
+    div
+      label(for="username") User ID: 
+      input(type="text" name="username")
+    div
+      label(for="password") Password: 
+      input(type="password" name="password")
+    div
+      button(type="submit") 送信
+  a(href="users/list") ./users/list
